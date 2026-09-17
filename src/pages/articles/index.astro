@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+
+const articles = (await getCollection('articles', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Articles — Ali Elgin</title>
+	</head>
+	<body>
+		<h1>Articles</h1>
+		<ul>
+			{articles.map((a) => (
+				<li>
+					<a href={`/articles/${a.id}/`}>{a.data.title}</a>
+					<time datetime={a.data.date.toISOString()}>{a.data.date.toLocaleDateString('en-GB', { dateStyle: 'medium' })}</time>
+					<p>{a.data.description}</p>
+				</li>
+			))}
+		</ul>
+	</body>
+</html>
