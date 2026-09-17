@@ -1,5 +1,6 @@
 ---
-import Hello from '../components/Hello';
+const title = 'Ali Elgin: engineer and developer educator';
+const description = 'Tutorials, videos, and working code from a senior engineer with 21 years of shipping software. Storybook, visual testing, Cloudflare, Apple Watch, and more.';
 ---
 
 <html lang="en">
@@ -8,13 +9,18 @@ import Hello from '../components/Hello';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Ali Elgin — Developer Relations</title>
-		<meta name="description" content="Ali Elgin, developer relations portfolio." />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={Astro.site} />
 	</head>
 	<body>
 		<h1>Ali Elgin</h1>
-		<p>Developer Relations.</p>
-		<Hello client:load />
-		<p><a href="/articles/">Articles</a></p>
+		<p>Senior engineer. I build developer tools and products, and teach what I learn shipping them.</p>
+		<p>
+			<a rel="me" href="https://github.com/alielgin">GitHub</a>
+			<a rel="me" href="https://www.linkedin.com/in/alielgin/">LinkedIn</a>
+			<a href="mailto:ali@alielgin.dev">ali@alielgin.dev</a>
+		</p>
+		<p><a href="/tutorials/">Tutorials</a></p>
 	</body>
 </html>
