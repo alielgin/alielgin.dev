@@ -1,26 +1,20 @@
 ---
+import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
 const tutorials = (await getCollection('tutorials', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Tutorials — Ali Elgin</title>
-	</head>
-	<body>
-		<h1>Tutorials</h1>
-		<ul>
-			{tutorials.map((a) => (
-				<li>
-					<a href={`/tutorials/${a.id}/`}>{a.data.title}</a>
-					<time datetime={a.data.date.toISOString()}>{a.data.date.toLocaleDateString('en-GB', { dateStyle: 'medium' })}</time>
-					<p>{a.data.description}</p>
-				</li>
-			))}
-		</ul>
-	</body>
-</html>
+<Base title="Tutorials: Ali Elgin" description="Every tutorial, newest first. Each one has a video, a written version, and working code.">
+	<h1>Tutorials</h1>
+	<ul class="plain">
+		{tutorials.map((t) => (
+			<li>
+				<a href={`/tutorials/${t.id}/`}>{t.data.title}</a>
+				<br /><time datetime={t.data.date.toISOString()}>{t.data.date.toLocaleDateString('en-GB', { dateStyle: 'medium' })}</time>
+				<p>{t.data.description}</p>
+			</li>
+		))}
+	</ul>
+</Base>

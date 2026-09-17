@@ -1,0 +1,72 @@
+@import '@fontsource-variable/bricolage-grotesque/wght.css';
+@import '@fontsource/atkinson-hyperlegible-next/400.css';
+@import '@fontsource/atkinson-hyperlegible-next/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+
+:root {
+  --paper:   #F5F8FA;
+  --ink:     #0B2A4A;
+  --muted:   #5A6B7D;
+  --rule:    #D5DEE6;
+  --magenta: #A8286A;
+  --wash:    #E8EFF5;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:   #0A1B2E;
+    --ink:     #E6EDF3;
+    --muted:   #93A4B5;
+    --rule:    #1F3349;
+    --magenta: #F07CB4;
+    --wash:    #11263C;
+  }
+}
+
+* { box-sizing: border-box; }
+html { font-size: 18px; }
+body {
+  margin: 0;
+  padding: 4rem 1rem 3rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Atkinson Hyperlegible Next', system-ui, sans-serif;
+  line-height: 1.65;
+}
+body > * { max-width: 68ch; margin-inline: auto; }
+h1, h2, h3 {
+  font-family: 'Bricolage Grotesque Variable', sans-serif;
+  line-height: 1.15;
+  margin: 2.5rem 0 0.75rem;
+}
+h1 { font-size: clamp(2.4rem, 6vw, 3.8rem); font-weight: 700; line-height: 1.05; margin-top: 0; }
+h2 { font-size: 1.75rem; font-weight: 600; }
+h3 { font-size: 1.4rem; font-weight: 600; }
+p { margin: 0 0 1rem; }
+small, time, .meta { font-size: 0.9rem; color: var(--muted); }
+a {
+  color: var(--magenta);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--magenta); outline-offset: 2px; }
+code, pre { font-family: 'JetBrains Mono', monospace; font-size: 0.95em; }
+pre {
+  background: var(--wash);
+  border: 1px solid var(--rule);
+  padding: 1rem;
+  overflow-x: auto;
+  max-width: 80ch;
+}
+img, iframe { max-width: 100%; height: auto; }
+img { border: 1px solid var(--rule); border-radius: 4px; }
+iframe { aspect-ratio: 16 / 9; height: auto; width: 100%; max-width: 80ch; border: 0; }
+ul.plain { list-style: none; padding: 0; }
+ul.plain li { margin-bottom: 1.5rem; }
+nav { display: flex; gap: 1.5rem; align-items: baseline; margin-bottom: 4rem; }
+nav .home { margin-right: auto; color: var(--ink); text-decoration: none; font-family: 'Bricolage Grotesque Variable', sans-serif; font-weight: 600; }
+footer { margin-top: 5rem; padding-top: 1rem; border-top: 1px solid var(--rule); display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.shows { background: var(--wash); border: 1px solid var(--rule); padding: 1rem 1.25rem; margin: 2rem 0; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
