@@ -4,7 +4,7 @@ Working brief for the site. Drop it in the repo root as `BRIEF.md` so Claude Cod
 
 ## 1. Purpose
 
-One job: convince a DevRel / DX hiring manager, in under a minute, that Ali Elgin can teach developers well and has shipped real software.
+One job: convince a DevRel / DX hiring manager, in under a minute, that Ali Elgin can teach developers well.
 
 Everything on the site either serves that job or gets cut.
 
@@ -12,8 +12,7 @@ Everything on the site either serves that job or gets cut.
 
 1. Who this is and what he does.
 2. That there are finished teaching pieces, each with a video, a written version, and working code.
-3. That he ships real products, not just demos.
-4. How to contact him.
+3. How to contact him.
 
 **Secondary audience:** developers arriving from YouTube, Reddit, or the Storybook Discord who want the written version or the repo. They land on a tutorial page, not the homepage, so every tutorial page must stand alone.
 
@@ -22,16 +21,17 @@ Everything on the site either serves that job or gets cut.
 - No services, pricing, or "hire me for projects" call to action. That is what mishigo.co and lapsana.com are for.
 - No chronological blog as the front door. The homepage is curated.
 - No newsletter, comments, analytics dashboards, or CMS. Markdown in the repo.
+- No product or project showcase. The site is strictly tutorials and guides.
 - No claiming the title "Developer Relations" until it is a job held. Describe the work instead.
 - No design polish beyond this brief until three pieces are live.
 
 ## 3. Sitemap
 
 ```
-/                          Home: who, featured work, shipped products, contact
+/                          Home: who, featured tutorials, contact
 /tutorials/                All pieces, newest first
 /tutorials/<slug>/         One piece: video, written tutorial, repo
-/about/                    Bio, products, talks, contact
+/about/                    Bio, talks, contact
 /rss.xml                   Feed of tutorials
 ```
 
@@ -62,12 +62,6 @@ Rename the current `/articles/` to `/tutorials/` now, before any URL is shared.
 |                                                              |
 |  (next piece, same shape)                                    |
 +--------------------------------------------------------------+
-|  Things I've shipped                                         |
-|  FlightDial        one line                      link        |
-|  Trivia Gorilla    one line                      link        |
-|  enflasyonkac.com  one line                      link        |
-|  NOTAM mapping     one line (no link, client work)           |
-+--------------------------------------------------------------+
 |  footer: email, RSS, source on GitHub                        |
 +--------------------------------------------------------------+
 ```
@@ -93,7 +87,6 @@ Order, top to bottom:
 ### About
 
 - Photo, three short paragraphs: what you do now, what you've built over 21 years, what you're looking for.
-- Shipped products with one line each.
 - Talks and community work (fill in from real events, with links or slides where they exist).
 - Contact: email, GitHub, LinkedIn.
 - Optional line: "Based in Cyprus, working remotely, open to relocation."
@@ -108,13 +101,6 @@ Order, top to bottom:
 
 - "Senior engineer. I build developer tools and products, and teach what I learn shipping them."
 - "I've shipped software for 21 years. Here I show how the tricky parts actually work, with video, a written guide, and code you can run."
-
-**Product one-liners:**
-
-- FlightDial: "Live aircraft on an Apple Watch dial, placed where they really are in the sky."
-- Trivia Gorilla: "A daily quiz app for iPhone and Android, running on Cloudflare."
-- enflasyonkac.com: "Turkey's inflation figures and calculators, live minutes after each release."
-- NOTAM mapping platform: "Aviation notices on a map, in daily use at a civil aviation authority."
 
 **First tutorial, title options:**
 
@@ -156,7 +142,7 @@ Homepage lists `featured` pieces, max five. `/tutorials/` lists everything not `
 
 ### Idea
 
-The site is a teaching surface, so it should read like good documentation written by one person: calm, legible, quick. Personality comes from one source only, which is aviation. The palette borrows from aeronautical charts (cool paper, deep navy ink, the magenta used for airspace boundaries). It is personal, it is not the usual developer-portfolio look, and it ties quietly to FlightDial and the NOTAM work without any plane icons or gimmicks.
+The site is a teaching surface, so it should read like good documentation written by one person: calm, legible, quick. Personality comes from one source only, which is aviation. The palette borrows from aeronautical charts (cool paper, deep navy ink, the magenta used for airspace boundaries). It is personal, it is not the usual developer-portfolio look, without any plane icons or gimmicks.
 
 Boldness is spent in one place: large, confident type for the name and tutorial titles. Everything else stays quiet.
 
