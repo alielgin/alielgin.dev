@@ -5,6 +5,7 @@ import bricolage from '@fontsource-variable/bricolage-grotesque/files/bricolage-
 interface Props { title: string; description: string; ogImage?: string }
 const { title, description, ogImage } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const year = new Date().getFullYear();
 ---
 
 <html lang="en">
@@ -23,15 +24,22 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 		{ogImage && <meta property="og:image" content={ogImage} />}
 	</head>
 	<body>
-		<nav>
-			<a class="home" href="/">Ali Elgin</a>
-			<a href="/tutorials/">Tutorials</a>
-			<a rel="me" href="https://github.com/alielgin">GitHub</a>
-		</nav>
+		<header class="masthead">
+			<div class="page masthead-in">
+				<a class="wordmark" href="/">alielgin<span>.dev</span></a>
+				<nav class="nav">
+					<a href="/tutorials/">Tutorials</a>
+					<a rel="me" href="https://github.com/alielgin">GitHub</a>
+					<a href="mailto:ali@alielgin.dev">Contact</a>
+				</nav>
+			</div>
+		</header>
+
 		<main><slot /></main>
-		<footer>
-			<a href="mailto:ali@alielgin.dev">ali@alielgin.dev</a>
-			<a href="https://github.com/alielgin/alielgin.dev">Source on GitHub</a>
+
+		<footer class="page">
+			<span>© {year} Ali Elgin</span>
+			<span><a href="https://github.com/alielgin/alielgin.dev">Source on GitHub</a></span>
 		</footer>
 	</body>
 </html>

@@ -9,15 +9,32 @@ export async function getStaticPaths() {
 
 const { tutorial } = Astro.props;
 const { Content } = await render(tutorial);
+const { title, description, date, cover, topics } = tutorial.data;
 ---
 
-<Base title={`${tutorial.data.title}: Ali Elgin`} description={tutorial.data.description} ogImage={tutorial.data.cover}>
-	<article>
-		<h1>{tutorial.data.title}</h1>
-		<p>{tutorial.data.description}</p>
-		<time datetime={tutorial.data.date.toISOString()}>{tutorial.data.date.toLocaleDateString('en-GB', { dateStyle: 'medium' })}</time>
-		{tutorial.data.cover && <img src={tutorial.data.cover} alt="" />}
-		<Content />
-	</article>
-	<p><a href="/tutorials/">All tutorials</a></p>
+<Base title={`${title}: Ali Elgin`} description={description} ogImage={cover}>
+	<section>
+		<div class="page grid">
+			<div class="rail">
+				<time datetime={date.toISOString()}>{date.toLocaleDateString('en-GB', { dateStyle: 'medium' })}</time>
+				{topics && <span class="rail-note">{topics.join(' · ')}</span>}
+			</div>
+			<article>
+				<h1>{title}</h1>
+				<p class="lede" style="margin-top: 0.875rem;">{description}</p>
+				{cover && <img class="cover" src={cover} alt="" style="margin-top: 1.75rem;" />}
+				<div class="prose" style="margin-top: 1.75rem;"><Content /></div>
+			</article>
+		</div>
+	</section>
+
+	<section>
+		<div class="page grid">
+			<div class="rail">More</div>
+			<div class="contact-links" style="margin-top: 0;">
+				<a href="/tutorials/">All tutorials</a>
+				<a href="mailto:ali@alielgin.dev">Send a correction</a>
+			</div>
+		</div>
+	</section>
 </Base>

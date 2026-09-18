@@ -4,28 +4,77 @@ import { getCollection } from 'astro:content';
 
 const tutorials = (await getCollection('tutorials', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const SIXTY_DAYS = 1000 * 60 * 60 * 24 * 60;
+const isRecent = (date: Date) => Date.now() - date.valueOf() < SIXTY_DAYS;
+const short = (date: Date) => date.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
 ---
 
 <Base
 	title="Ali Elgin: engineer and developer educator"
 	description="Tutorials, videos, and working code from a senior engineer with 21 years of shipping software. Storybook, visual testing, Cloudflare, Apple Watch, and more."
 >
-	<h1>Ali Elgin</h1>
-	<p>Senior engineer. I build developer tools and products, and teach what I learn shipping them.</p>
-	<p class="links">
-		<a rel="me" href="https://github.com/alielgin">GitHub</a>
-		<a rel="me" href="https://www.linkedin.com/in/ali-elgin-a43364a9/">LinkedIn</a>
-		<a href="mailto:ali@alielgin.dev">ali@alielgin.dev</a>
-	</p>
+	<section class="hero">
+		<div class="page grid">
+			<div class="rail">
+				Engineer · Educator
+				<span class="rail-note">Video, written version, working code</span>
+			</div>
+			<div>
+				<h1>Ali<br />Elgin<span class="stop">.</span></h1>
+				<p class="lede">Senior engineer. I build developer tools and products, and teach what I learn shipping them.</p>
+				<div class="hero-body">
+					<p>Every piece ships three ways — a video, a written tutorial, and a repository you can run. If one of the three is missing, the piece is not finished yet.</p>
+				</div>
+				<div class="topics">
+					<span class="topic topic-lead">Storybook</span>
+					<span class="topic">Visual testing</span>
+					<span class="topic">Cloudflare</span>
+					<span class="topic">Apple Watch</span>
+				</div>
+				<div class="actions">
+					<a class="btn btn-solid" href="/tutorials/">Read the tutorials</a>
+					<a class="btn btn-ghost" href="mailto:ali@alielgin.dev">Get in touch</a>
+				</div>
+			</div>
+		</div>
+	</section>
 
-	<h2>Tutorials</h2>
-	<ul class="plain">
-		{tutorials.map((t) => (
-			<li>
-				<a href={`/tutorials/${t.id}/`}>{t.data.title}</a><br />
-				<span class="meta">{t.data.description}</span>
-			</li>
-		))}
-	</ul>
+	<section id="tutorials">
+		<div class="page grid">
+			<div class="rail">
+				Tutorials
+				<span class="rail-note">Newest first</span>
+			</div>
+			<div class="rows">
+				{tutorials.map((t) => (
+					<article class="row">
+						<div class="row-main">
+							<h3><a href={`/tutorials/${t.id}/`}>{t.data.title}</a></h3>
+							<p>{t.data.description}</p>
+							{t.data.topics && <span class="stack">{t.data.topics.join(' · ')}</span>}
+						</div>
+						<span class={isRecent(t.data.date) ? 'tag tag-build' : 'tag'}>
+							<time datetime={t.data.date.toISOString()}>{short(t.data.date)}</time>
+						</span>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
 
+	<section id="contact">
+		<div class="page grid">
+			<div class="rail">Contact</div>
+			<div>
+				<h2>Questions, corrections, requests.</h2>
+				<p style="margin-top: 0.875rem;">If something here saved you an afternoon, or cost you one, I want to hear about it. Requests for what to cover next are welcome too.</p>
+				<div class="contact-links">
+					<a href="mailto:ali@alielgin.dev">ali@alielgin.dev</a>
+					<a rel="me" href="https://github.com/alielgin">github.com/alielgin</a>
+					<a rel="me" href="https://www.linkedin.com/in/ali-elgin-a43364a9/">linkedin</a>
+				</div>
+			</div>
+		</div>
+	</section>
 </Base>
