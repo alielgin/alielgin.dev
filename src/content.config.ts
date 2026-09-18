@@ -8,6 +8,7 @@ const tutorials = defineCollection({
     description: z.string(),
     date: z.coerce.date(),
     cover: z.string().url().optional(), // R2 URL
+    topics: z.array(z.string()).optional(),
     draft: z.boolean().default(false),
   }),
 });

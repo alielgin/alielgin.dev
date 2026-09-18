@@ -4,17 +4,36 @@ import { getCollection } from 'astro:content';
 
 const tutorials = (await getCollection('tutorials', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const short = (date: Date) => date.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
 ---
 
 <Base title="Tutorials: Ali Elgin" description="Every tutorial, newest first. Each one has a video, a written version, and working code.">
-	<h1>Tutorials</h1>
-	<ul class="plain">
-		{tutorials.map((t) => (
-			<li>
-				<a href={`/tutorials/${t.id}/`}>{t.data.title}</a>
-				<br /><time datetime={t.data.date.toISOString()}>{t.data.date.toLocaleDateString('en-GB', { dateStyle: 'medium' })}</time>
-				<p>{t.data.description}</p>
-			</li>
-		))}
-	</ul>
+	<section>
+		<div class="page grid">
+			<div class="rail">
+				Tutorials
+				<span class="rail-note">{tutorials.length} {tutorials.length === 1 ? 'piece' : 'pieces'}, newest first</span>
+			</div>
+			<div>
+				<h1>Tutorials</h1>
+				<p class="lede" style="margin-top: 0.875rem;">Each one has a video, a written version, and working code.</p>
+
+				<div class="rows" style="margin-top: 2rem;">
+					{tutorials.map((t) => (
+						<article class="row">
+							<div class="row-main">
+								<h3><a href={`/tutorials/${t.id}/`}>{t.data.title}</a></h3>
+								<p>{t.data.description}</p>
+								{t.data.topics && <span class="stack">{t.data.topics.join(' · ')}</span>}
+							</div>
+							<span class="tag">
+								<time datetime={t.data.date.toISOString()}>{short(t.data.date)}</time>
+							</span>
+						</article>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
 </Base>
