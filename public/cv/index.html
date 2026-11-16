@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ali Elgin — CV</title>
+<meta name="description" content="Ali Elgin, senior backend and full-stack engineer. TypeScript, Node.js, PHP and Laravel; 21 years in production.">
+<meta property="og:title" content="Ali Elgin — CV">
+<meta property="og:description" content="Senior backend and full-stack engineer. TypeScript, Node.js, PHP and Laravel; 21 years in production.">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --ink:#1a1d23; --muted:#5d6470; --faint:#8a909a;
+  --line:#e4e1da; --accent:#1f3864; --accent-soft:#e8edf6;
+  --max:760px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111317; --surface:#171a1f; --ink:#e8e6e1; --muted:#a3a9b3; --faint:#7b818b;
+    --line:#2a2e35; --accent:#8fb0e8; --accent-soft:#1c2433;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111317; --surface:#171a1f; --ink:#e8e6e1; --muted:#a3a9b3; --faint:#7b818b;
+  --line:#2a2e35; --accent:#8fb0e8; --accent-soft:#1c2433;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent}
+a:hover{border-bottom-color:currentColor}
+.wrap{max-width:var(--max); margin:0 auto; padding:56px 16px 72px}
+header{border-bottom:1px solid var(--line); padding-bottom:28px; margin-bottom:8px}
+h1{font-size:2.4rem; line-height:1.1; margin:0 0 8px; font-weight:600; letter-spacing:-.02em}
+.role{font-size:1.1rem; color:var(--muted); margin:0 0 18px}
+.meta{display:flex; flex-wrap:wrap; gap:6px 18px; font-size:.92rem; color:var(--muted); margin:0; padding:0; list-style:none}
+.actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:9px 16px; border-radius:6px;
+  font-size:.92rem; font-weight:500; border:1px solid var(--line); color:var(--ink); background:var(--surface);
+}
+.btn:hover{border-color:var(--accent); border-bottom-color:var(--accent)}
+.btn.primary{background:var(--accent); border-color:var(--accent); color:var(--bg)}
+section{padding-top:36px}
+h2{
+  font:500 .78rem/1 "IBM Plex Mono",ui-monospace,monospace; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--accent); margin:0 0 16px;
+}
+p{margin:0 0 12px}
+.summary{font-size:1.05rem}
+dl.skills{display:grid; grid-template-columns:200px 1fr; gap:10px 20px; margin:0}
+dl.skills dt{font-weight:500}
+dl.skills dd{margin:0; color:var(--muted)}
+.job{padding:18px 0; border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0; padding-top:0}
+.job-head{display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px}
+.job-title{font-weight:600}
+.job-org{color:var(--muted)}
+.job-date{font:400 .82rem "IBM Plex Mono",ui-monospace,monospace; color:var(--faint); white-space:nowrap}
+ul{margin:0; padding-left:1.1em}
+li{margin:0 0 6px; color:var(--ink)}
+li::marker{color:var(--faint)}
+.tag{
+  display:inline-block; font:500 .72rem "IBM Plex Mono",monospace; padding:2px 7px; border-radius:4px;
+  background:var(--accent-soft); color:var(--accent); margin-left:6px; vertical-align:2px;
+}
+.edu li{list-style:none; margin-left:-1.1em}
+footer{margin-top:48px; padding-top:20px; border-top:1px solid var(--line); font-size:.85rem; color:var(--faint)}
+@media (max-width:600px){
+  .wrap{padding-top:36px}
+  h1{font-size:2rem}
+  dl.skills{grid-template-columns:1fr; gap:2px}
+  dl.skills dd{margin-bottom:10px}
+}
+@media print{
+  :root{--bg:#fff; --surface:#fff; --ink:#000; --muted:#333; --faint:#555; --line:#ccc; --accent:#1f3864}
+  .actions, footer{display:none}
+  .wrap{padding:0; max-width:none}
+  section{padding-top:18px}
+  .job{break-inside:avoid}
+  a{border:0; color:inherit}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <h1>Ali Elgin</h1>
+    <p class="role">Senior Backend / Full-Stack Engineer · TypeScript, Node.js, PHP</p>
+    <ul class="meta">
+      <li>Nicosia, Cyprus</li>
+      <li>Open to relocation</li>
+      <li><a href="mailto:ali.elgin@gmail.com">ali.elgin@gmail.com</a></li>
+      <li><a href="https://github.com/alielgin">github.com/alielgin</a></li>
+      <li><a href="https://linkedin.com/in/ali-elgin-a43364a9">LinkedIn</a></li>
+    </ul>
+    <div class="actions">
+      <a class="btn primary" href="Ali_Elgin_CV.pdf" download>Download PDF</a>
+      <a class="btn" href="mailto:ali.elgin@gmail.com">Get in touch</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p class="summary">Backend and full-stack engineer with 21 years of production work. TypeScript, Node.js and React have been my main stack for the past four years, after several years of Laravel and PHP. I build and run Makbul, a bookkeeping SaaS that turns invoices and receipts into schema-validated financial data, and I am the sole engineer on a subscription platform with its own payment integration. Before that I scaled a real-time Node.js and PostgreSQL dashboard from 4 sites to more than 30, and designed a national-scale Laravel and MySQL system that tracked up to 80,000 people. I care about data that stays correct, systems that stay up, and code the next engineer can change safely.</p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>TypeScript and Node.js</dt><dd>Hono, NestJS, TanStack Start, Next.js, React, REST and GraphQL APIs, WebSockets, queues and background workers</dd>
+      <dt>PHP</dt><dd>Several years of Laravel in production: queued jobs, scheduling, Eloquent</dd>
+      <dt>Data</dt><dd>PostgreSQL, MySQL (replication, failover, live recovery), Prisma, Drizzle, TypeORM, Redis / Valkey, schema and query design</dd>
+      <dt>Payments and financial data</dt><dd>Payment-provider integration, subscription billing, invoice and receipt extraction, revenue, retention and churn reporting</dd>
+      <dt>Testing and reliability</dt><dd>Playwright end-to-end suites; Sentry, Bugsink, Graylog, Grafana, with scheduled Claude Code runs every 4 hours that check them for anomalies through MCP servers</dd>
+      <dt>Infrastructure</dt><dd>Docker, GitHub Actions, Cloudflare, DigitalOcean, Hetzner, Linux</dd>
+      <dt>Security</dt><dd>White-hat hacking certification (2016); CTF winner (2018)</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Principal Engineer</span> <span class="job-org">· Mishigo (independent practice)</span></div>
+        <span class="job-date">Jun 2025 – Present</span>
+      </div>
+      <ul>
+        <li>Build and run <a href="https://makbul.app">Makbul</a>, a bilingual bookkeeping SaaS for small businesses: a Hono API on Cloudflare Workers with Drizzle, and an LLM pipeline that turns invoices and receipts into schema-validated structured data, with model routing to control cost per document.</li>
+        <li>Scoped the first release to bookkeeping only: the full accounting module needs a tax-office audit and approval, so it is gated on that process, not on engineering.</li>
+        <li>Wrote a point-of-sale app's API client from scratch against a non-standard backend (custom auth without refresh tokens, inconsistent entity shapes), normalised into generated types so the app only saw one shape per entity.</li>
+        <li>Also shipped consumer apps: FlightDial on Apple Watch (about 2,850 users, with in-app purchase) and Trivia Gorilla on iOS and Android with a queue-driven backend.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Technical Advisor</span> <span class="job-org">· Satranç365 (chess training subscription platform)</span></div>
+        <span class="job-date">Sep 2022 – Present</span>
+      </div>
+      <ul>
+        <li>Sole engineer on a platform with paying subscribers: React frontend, Prisma data layer, real-time WebSocket server, payment integration (iyzico) and a NestJS and TypeORM admin panel, guarded by an extensive Playwright suite.</li>
+        <li>Own production on DigitalOcean (MySQL, Valkey, two servers, object storage). Diagnosed and fixed payment-provider timeouts and reconciled duplicate user records; monitor health, payment and usage logs in Sentry, Bugsink and Graylog.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Senior Full-Stack Engineer</span> <span class="job-org">· Nevados (US), via Zentered · Remote</span></div>
+        <span class="job-date">Feb 2023 – Jul 2025</span>
+      </div>
+      <ul>
+        <li>Scaled a real-time solar operations dashboard (Node.js, Prisma, PostgreSQL, TDengine, Next.js) from 4 sites at 250 MW to more than 30 sites past 1 GW, used daily by field technicians and operations teams.</li>
+        <li>Kept it fast through that growth: moved aggregation and unit conversion into the database, added a REST API next to GraphQL, and built a chunked request queue with cancellation so heavy charts load progressively. Extensive Playwright suite. Worked across time zones from US Pacific to Eastern Europe.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Senior Full-Stack Engineer</span> <span class="job-org">· Digital Loop / Couch Now (Munich) · Remote</span></div>
+        <span class="job-date">Sep 2021 – Feb 2023</span>
+      </div>
+      <ul>
+        <li>Built onboarding and live video sessions for a consumer therapy product used by about 500 couples a month, on Nuxt and Vue.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Software Engineer, BI and Systems</span> <span class="job-org">· Turkcell (Cyprus)</span></div>
+        <span class="job-date">Nov 2018 – Sep 2021</span>
+      </div>
+      <ul>
+        <li>Built BI for an ISP with more than 40,000 subscribers: monthly revenue, retention, revenue projections and churn analysis, including a churn signal from connection telemetry that showed weeks before customers cancelled.</li>
+        <li>Designed the architecture and co-built in Laravel the North Cyprus Covid quarantine tracking system: Bluetooth bracelets and a React Native app feeding MySQL, geofence checks on Laravel queues, data shared with police and the Ministry of Health; 80,000 people tracked at peak. Owned its data design, replication, failover and one live recovery.</li>
+        <li>Led the company's move to Node.js, drove Grafana adoption and ran a weekly engineering talk series.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-title">Earlier roles</span> <span class="job-org">· BRTK/Bayrak · Monotone Studio · DK Productions · Infosistem</span></div>
+        <span class="job-date">2005 – 2018</span>
+      </div>
+      <ul>
+        <li>PHP and JavaScript applications for broadcast media, agency and enterprise clients in Cyprus, Amsterdam, London and Ankara.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <ul class="edu">
+      <li>MSc Media Technology, Leiden University <span class="job-date">· 2012</span></li>
+      <li>MSc Cognitive Computing, Goldsmiths, University of London <span class="job-date">· 2007</span></li>
+      <li>BSc Informatics, Eastern Mediterranean University <span class="job-date">· 2005</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <p>English (fluent) · Turkish (native)</p>
+  </section>
+
+  <footer>alielgin.dev</footer>
+</main>
+</body>
+</html>
