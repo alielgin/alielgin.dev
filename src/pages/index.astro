@@ -1,9 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getCollection } from 'astro:content';
-
-const tutorials = (await getCollection('tutorials', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <Base
@@ -18,14 +14,8 @@ const tutorials = (await getCollection('tutorials', ({ data }) => !data.draft))
 		<a href="mailto:ali@alielgin.dev">ali@alielgin.dev</a>
 	</p>
 
-	<h2>Tutorials</h2>
-	<ul class="plain">
-		{tutorials.map((t) => (
-			<li>
-				<a href={`/tutorials/${t.id}/`}>{t.data.title}</a><br />
-				<span class="meta">{t.data.description}</span>
-			</li>
-		))}
-	</ul>
-
+	<div class="shows">
+		<h2 style="margin-top: 0">Coming soon</h2>
+		<p>Tutorials, videos and working code are on the way. Check back shortly.</p>
+	</div>
 </Base>
